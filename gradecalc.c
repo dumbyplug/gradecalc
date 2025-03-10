@@ -1,14 +1,11 @@
 #include <stdio.h>
 
-void bir_işarə_qoş(char *yazı, char işarə){
-	int sıra;
-	for(sıra = 0; yazı[sıra] != 0; sıra++);
-	yazı[sıra] = işarə;
-	yazı[sıra + 1] = 0; 
 
+void ayar_dosyası_yarat(char **dərs_adları, int **dəyərlər, int dərs_sayı){
 }
 
-void ayar_dosyası_yarat(){
+/*
+void ayar_dosyası_yarat_arayüz(){
 	int sıra0, sıra1, dərs_sayı, sınaq_sayı, dəyər;
 	char dərsin_adı[64], yığışma[128];
 	FILE *dosya_göstərən;
@@ -35,6 +32,9 @@ void ayar_dosyası_yarat(){
 		printf("---\nSınaqların sayı: ");
 		scanf("%d", &sınaq_sayı);
 
+		sprintf(yığışma, "%d\n", sınaq_sayı);
+		fputs(yığışma, dosya_göstərən);
+
 		printf("---------------------\n");
 		sıra1 = 0;
 		while(sıra1 < sınaq_sayı){
@@ -52,7 +52,22 @@ void ayar_dosyası_yarat(){
 	}
 	fclose(dosya_göstərən);
 }
+*/
+
+void balı_hesabla(){
+	FILE *dosya_göstərən;
+	dosya_göstərən = fopen("dəyərlər.byd", "r");
+
+	char yığışma[128];
+	while(fgets(yığışma, 128, dosya_göstərən)){
+		printf("%c", yığışma[0]);
+	}
+	fclose(dosya_göstərən);
+}
 
 int main(void){
+	int    dərs_sayı;
+	char **dərs_adları;
+	int  **dəyərlər;
 	return 0;
 }
